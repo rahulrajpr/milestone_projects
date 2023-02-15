@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+<body>
+
+<h3 style="font-size:35px;color:green;text-align:centre">Validating Online News
+<sub style="font-size:15px;color:purple" >Powered by Machine Learning</sub></h3>
+
+<div>
+  <form action="{{ url_for('predict')}}"method="post">
+    <label for="n"><strong>News Headline</strong></label>
+    <br></br>
+    <p1 style="font-size:15px"> <i>* Limited to english language.</i></p1>
+    <br></br>
+    <p2 style="font-size:15px"><i>* Paste only the news headlines that you read online.</i></p2>
+    <br></br>
+    <p2 style="font-size:15px"><i>* Trained to 80 % specificity.</i></p2>
+    <br></br>
+    <input type="text" id="n" name="news" placeholder="paste in here the online news headline and click on validate" style="font-size:20px;font-family:Century Gothic">
+    <br></br>
+    <input type="reset" value="Reset" style="font-size:15px">
+    <br></br>
+    <input type="submit" value="Validate" style="font-size:20px;font-weight: bold;font-family:Century Gothic">
+  </form>
+</div>
+
+<div style="font-size:25px;color:purple;font-weight: bold;font-family:Century Gothic">
+ {{ prediction_text }}
+</div>
+
+<div style="font-size:15px;color:green;">
+
+  <p><a href="https://www.linkedin.com/in/rahulrajml">Linkedin!</a>
+  <a href="https://github.com/rahulrajpr">Github!</a></p>
+
+</div>
+
+</body>
+</html>
